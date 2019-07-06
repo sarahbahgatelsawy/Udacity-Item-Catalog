@@ -94,8 +94,8 @@ def authorized(resp):
             return render_template(
                 'home.html', title='Home', category_exists='True',
                 categories=categories, items=items)
-    except URLError, e:
-        if e.code == 401:
+    except URLError:
+        if URLError.code == 401:
 
 #Unauthorized "bad token"
 
